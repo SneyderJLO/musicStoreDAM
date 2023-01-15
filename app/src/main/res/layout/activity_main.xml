@@ -15,6 +15,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="200dp"
         android:backgroundTint="#161628"
+        android:onClick="onLogin"
         android:text="LOGIN"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
