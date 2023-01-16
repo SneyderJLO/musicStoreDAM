@@ -30,6 +30,8 @@ public class InstrumentsGalery extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instruments_galery);
+
+
         showInstruments();
 
 //        cx = new Conexion(this);
@@ -69,30 +71,40 @@ public class InstrumentsGalery extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Instrument>> call, Response<List<Instrument>> response) {
                 if (response.isSuccessful()) {
+//                    System.out.println("Response: " + response.body());
                     instrumentList = (ArrayList<Instrument>) response.body();
+//                    System.out.println("Instrumentos: " + instrumentList);
+                    gridView = findViewById(R.id.gridInstruments);
                     gridView.setAdapter(new GaleriaInstrumentosAdapter(InstrumentsGalery.this, instrumentList));
                     gridView.setNumColumns(2);
+
+                    gridView.setOnItemClickListener((parent, view, position, id) -> {
+                        Intent intent = new Intent(InstrumentsGalery.this, InstrumentScreen.class);
+                        intent.putExtra("id", instrumentList.get(position).getId());
+                        startActivity(intent);
+                    });
                 }
             }
 
             @Override
             public void onFailure(Call<List<Instrument>> call, Throwable t) {
+                System.out.println("Error: " + t.getMessage());
                 Toast.makeText(InstrumentsGalery.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    void prepararDatos () {
-        Cursor cursor = cx.consultar("SELECT * FROM instrumentos");
-        if(cursor.getCount() != 0){
-            while (cursor.moveToNext()){
-                String nombre = cursor.getString(1);
-                String descripcion = cursor.getString(2);
-                int imagen = cursor.getInt(4);
-                String brand = cursor.getString(5);
-                Instrument instrument = new Instrument(nombre, descripcion, imagen, brand);
-                instrumentList.add(instrument);
-            }
-        }
-    }
+//    void prepararDatos () {
+//        Cursor cursor = cx.consultar("SELECT * FROM instrumentos");
+//        if(cursor.getCount() != 0){
+//            while (cursor.moveToNext()){
+//                String nombre = cursor.getString(1);
+//                String descripcion = cursor.getString(2);
+//                String imagen = cursor.getInt(4);
+//                String brand = cursor.getString(5);
+//                Instrument instrument = new Instrument(nombre, descripcion, imagen, brand);
+//                instrumentList.add(instrument);
+//            }
+//        }
+//    }
 }

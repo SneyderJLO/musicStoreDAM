@@ -8,7 +8,7 @@ public class ApiClient {
     public static Retrofit getClient(){
         if(retrofit == null){
             retrofit = new Retrofit.Builder()
-                    .baseUrl("https://localhost:7128/api")
+                    .baseUrl("https://603c-157-100-112-154.ngrok.io/api/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }

@@ -44,14 +44,14 @@ public class GaleriaInstrumentosAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
         v = layoutInflater.inflate(R.layout.instrument_card, null);
 
-        String title = instruments.get(i).getName();
-        int image = instruments.get(i).getImage();
+        String title = instruments.get(i).getMarca();
+        String image = instruments.get(i).getImagen();
 
         TextView txtTitle = v.findViewById(R.id.txtTitle);
         ImageView imgInstrument = v.findViewById(R.id.imageInstrument);
 
         Picasso.get()
-                .load("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg")
+                .load(image)
                 .error(R.drawable.ic_launcher_background)
                 .into(imgInstrument);
 

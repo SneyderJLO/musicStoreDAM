@@ -18,11 +18,11 @@
 
     <TextView
         android:id="@+id/txtTitle"
-        android:layout_width="176dp"
-        android:layout_height="36dp"
+        android:layout_width="206dp"
+        android:layout_height="52dp"
         android:layout_marginTop="32dp"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
