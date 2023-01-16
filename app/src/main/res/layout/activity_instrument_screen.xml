@@ -10,26 +10,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="422dp"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="224dp"
-                android:layout_height="58dp"
-                android:layout_marginTop="36dp"
-                android:text="Agregar al Carrito"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
+            android:layout_width="436dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp">
 
             <TextView
                 android:id="@+id/txtInstrumentTitle"
-                android:layout_width="373dp"
-                android:layout_height="82dp"
+                android:layout_width="366dp"
+                android:layout_height="151dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="39dp"
                 android:layout_marginEnd="24dp"
@@ -41,30 +33,44 @@
 
             <ImageView
                 android:id="@+id/instrumentImageDesc"
-                android:layout_width="326dp"
-                android:layout_height="324dp"
+                android:layout_width="360dp"
+                android:layout_height="357dp"
                 android:layout_marginStart="38dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginEnd="58dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtInstrumentTitle"
                 app:srcCompat="@drawable/guitarra_01" />
 
             <TextView
                 android:id="@+id/txtDescription"
-                android:layout_width="335dp"
-                android:layout_height="71dp"
+                android:layout_width="354dp"
+                android:layout_height="265dp"
                 android:layout_marginStart="38dp"
                 android:layout_marginTop="44dp"
                 android:layout_marginEnd="49dp"
-                android:textSize="20sp"
+                android:textSize="24sp"
+                app:autoSizeTextType="uniform"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/instrumentImageDesc" />
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="396dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="20dp"
+                android:text="Agregar al Carrito"
+                app:icon="@drawable/cart_svgrepo_com"
+                app:iconGravity="textStart"
+                app:iconSize="30dp"
+                app:iconTint="#FBF5F5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
