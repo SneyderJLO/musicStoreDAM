@@ -18,7 +18,6 @@ public class Inicio extends AppCompatActivity {
         ImageView ivUsuario = findViewById(R.id.iconUsuario);
         //ImageView billi
         ImageView ivFaq = findViewById(R.id.iconFaq);
-
         Intent intentHome = new Intent(this, Inicio.class);
         Intent intentProducto = new Intent(this, InstrumentsGalery.class);
         Intent intentUsuario = new Intent(this, UserGestorActivity.class);
