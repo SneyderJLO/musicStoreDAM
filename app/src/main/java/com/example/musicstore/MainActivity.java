@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         EditText etPass = findViewById(R.id.etPass);
         Button btnIngresar = findViewById(R.id.btnIngresar);
         Intent intenRegister = new  Intent(MainActivity.this, RegisterActivity.class);
-        Intent intentPrincipal = new Intent(this, UserGestorActivity.class);
+        Intent intentPrincipal = new Intent(this, Inicio.class);
 
 
         //sharedkeepSession
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btnregis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(intentPrincipal);
+                startActivity(intenRegister);
             }
         });
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                         //CREAMOS UN SELECT para verificar la existencia del usuario
                         Cursor select = db.rawQuery("SELECT usuario, contrasenia FROM usuarios WHERE usuario= '" + user + "'"+ "AND contrasenia ='"+contrasenia+"'", null);
                         if(select.getCount()>=1){
-                            dialogPass(isLogin);
+                            dialogPass();
                             Toast.makeText(MainActivity.this, "Credenciales Correctas", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(MainActivity.this, "Credenciales Incorrectas", Toast.LENGTH_SHORT).show();
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void dialogPass(boolean isLogin){
+    private void dialogPass(){
         View customDialogView = LayoutInflater.from(MainActivity.this).inflate(R.layout.dialogkeepsession, null);
         // Creamos un nuevo diálogo
         AlertDialog.Builder customDialog = new AlertDialog.Builder(MainActivity.this);
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog = customDialog.create();
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
-        Intent intentPrincipal = new Intent(this, InstrumentsGalery.class);
+        Intent intentPrincipal = new Intent(this, Inicio.class);
 
         //Sp
         SharedPreferences spIsLogin = getSharedPreferences("prefLogin", MODE_PRIVATE);

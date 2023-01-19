@@ -90,13 +90,16 @@ public class UserGestorActivity extends AppCompatActivity {
                  ArrayList<DataUserBase> datosFilter = listUser.stream().filter(name->name.getNombre().toLowerCase().contains(charSequence.toString().toLowerCase())).collect(Collectors.toCollection(
                          ArrayList::new
                  ));
-//                    listUser.clear();
-//                    consultarListasPersonas();
-//                    customAdapterUsuarios adapter = new customAdapterUsuarios(listUser);
-//                    rvUser.setAdapter(adapter);
+
+                    listUser.clear();
+                    customAdapterUsuarios adapter = new customAdapterUsuarios(listUser);
+                    rvUser.setAdapter(adapter);
+                    consultarListasPersonas();
+                    updateList(i1, i2);
                     adapter.updateFilter(datosFilter);
-                    Log.d("datosOrg", listUser.toString());
-                    Log.d("datosNew", datosFilter.toString());
+
+                     //llama a la fncion update debido a que necesitaba que la linea 95 se repita pero directamente no se podia, por ende llamo a una función
+
 
 
                 }
@@ -110,21 +113,29 @@ public class UserGestorActivity extends AppCompatActivity {
             }
         });
 
-        btnUpList.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("NotifyDataSetChanged")
-            @Override
-            public void onClick(View view) {
+//        btnUpList.setOnClickListener(new View.OnClickListener() {
+//            @SuppressLint("NotifyDataSetChanged")
+//            @Override
+//            public void onClick(View view) {
+//
+//
+//                listUser.clear();
+//                customAdapterUsuarios adapter = new customAdapterUsuarios(listUser);
+//                rvUser.setAdapter(adapter);
+//                consultarListasPersonas();
+//                Toast.makeText(UserGestorActivity.this, "Lista Actualizada", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
-
-
-                rvUser.setAdapter(adapter);
-                listUser.clear();
-                consultarListasPersonas();
-                Toast.makeText(UserGestorActivity.this, "Lista Actualizada", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
+    }
+    public void updateList(int i1, int i2){
+        if(i1 > i2){
+            listUser.clear();
+            customAdapterUsuarios adapter = new customAdapterUsuarios(listUser);
+            rvUser.setAdapter(adapter);
+            consultarListasPersonas();
+        }
     }
 
     public void productoIconColor(View view) {
