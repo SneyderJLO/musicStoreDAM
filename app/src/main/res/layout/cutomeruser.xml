@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="350dp"
+        android:layout_height="379dp"
+        app:cardBackgroundColor="#C8474646"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="14dp"
+                android:paddingTop="10dp"
+                android:text="Información de cliente"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="249dp"
+                android:layout_height="54dp"
+                android:paddingTop="7dp"
+                android:text="Edita la infomración de los usuarios registrados."
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.163"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <EditText
+                android:id="@+id/etNombreCust"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blurlayout"
+                android:ems="10"
+                android:hint="Nombre"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="#9FFFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.078"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.313" />
+
+            <EditText
+                android:id="@+id/etApellidoCust"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blurlayout"
+                android:ems="10"
+                android:hint="Apellido"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="#9FFFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etNombreCust"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.31" />
+
+            <EditText
+                android:id="@+id/etNickCust"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blurlayout"
+                android:ems="10"
+                android:hint="Usuario/Nick"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="#9FFFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etPassCust"
+                app:layout_constraintTop_toBottomOf="@+id/etDireccionCust"
+                app:layout_constraintVertical_bias="0.13" />
+
+            <EditText
+                android:id="@+id/etCorreoCust"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blurlayout"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white"
+                android:textColorHint="#9FFFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.08"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etNombreCust"
+                app:layout_constraintVertical_bias="0.06999999" />
+
+            <EditText
+                android:id="@+id/etPassCust"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blurlayout"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="#9FFFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.079"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etCorreoCust"
+                app:layout_constraintVertical_bias="0.110000014" />
+
+            <EditText
+                android:id="@+id/etDireccionCust"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blurlayout"
+                android:ems="10"
+                android:hint="Dirección"
+                android:textColor="@color/white"
+                android:textColorHint="#9FFFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.509"
+                app:layout_constraintStart_toEndOf="@+id/etCorreoCust"
+                app:layout_constraintTop_toBottomOf="@+id/etApellidoCust"
+                app:layout_constraintVertical_bias="0.076" />
+
+            <Button
+                android:id="@+id/btnUpdatCust"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#03A9F4"
+                android:text="Actualizar"
+                app:cornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.96" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
