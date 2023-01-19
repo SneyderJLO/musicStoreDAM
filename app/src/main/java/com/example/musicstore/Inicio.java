@@ -17,13 +17,12 @@ public class Inicio extends AppCompatActivity {
         ImageView ivPRoducto = findViewById(R.id.iconProducto);
         ImageView ivUsuario = findViewById(R.id.iconUsuario);
         //ImageView billi
-        //ImageView pradin
         ImageView ivFaq = findViewById(R.id.iconFaq);
+
         Intent intentHome = new Intent(this, Inicio.class);
         Intent intentProducto = new Intent(this, InstrumentsGalery.class);
         Intent intentUsuario = new Intent(this, UserGestorActivity.class);
         //intent billy
-        //intent pradin
         Intent intentFaq = new Intent(this, FaqActivity.class);
 
         ivPRoducto.setOnClickListener(
