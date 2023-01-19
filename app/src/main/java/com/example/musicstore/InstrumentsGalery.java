@@ -36,10 +36,14 @@ public class InstrumentsGalery extends AppCompatActivity {
         ImageView ivUsuario = findViewById(R.id.iconUsuario);
         //ImageView billi
         //ImageView pradin
+        ImageView ivFaq = findViewById(R.id.iconFaq);
+
         Intent intentHome = new Intent(this, Inicio.class);
         Intent intentUsuario = new Intent(this, UserGestorActivity.class);
         //intent billy
         // intent pradin
+        Intent intentFaq = new Intent(this, FaqActivity.class);
+
         ivhome.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -56,8 +60,17 @@ public class InstrumentsGalery extends AppCompatActivity {
                     }
                 }
         );
-        showInstruments();
 
+
+        ivFaq.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(intentFaq);
+                    }
+                }
+        );
+        showInstruments();
 
 
 //        cx = new Conexion(this);
