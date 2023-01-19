@@ -27,7 +27,6 @@ public class FaqActivity extends AppCompatActivity {
         Intent intentProducto = new Intent(this, InstrumentsGalery.class);
         Intent intentUsuario = new Intent(this, UserGestorActivity.class);
         //intent billy
-        //intent pradin
         Intent intentFaq = new Intent(this, FaqActivity.class);
 
         ivhome.setOnClickListener(
