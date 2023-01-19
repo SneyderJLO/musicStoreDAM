@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.musicstore.adapters.GaleriaInstrumentosAdapter;
@@ -30,9 +32,33 @@ public class InstrumentsGalery extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instruments_galery);
-
-
+        ImageView ivhome = findViewById(R.id.iconInicio);
+        ImageView ivUsuario = findViewById(R.id.iconUsuario);
+        //ImageView billi
+        //ImageView pradin
+        Intent intentHome = new Intent(this, Inicio.class);
+        Intent intentUsuario = new Intent(this, UserGestorActivity.class);
+        //intent billy
+        // intent pradin
+        ivhome.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(intentHome);
+                    }
+                }
+        );
+        ivUsuario.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(intentUsuario);
+                    }
+                }
+        );
         showInstruments();
+
+
 
 //        cx = new Conexion(this);
 //        instrumentList = new ArrayList<>();

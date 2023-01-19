@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.musicstore.Recycler.DataUserBase;
@@ -45,7 +47,34 @@ public class UserGestorActivity extends AppCompatActivity {
         customAdapterUsuarios adapter = new customAdapterUsuarios(listUser);
         rvUser.setAdapter(adapter);
         Button btnUpList = findViewById(R.id.btnUpdateList);
+        //*************menu
+        ImageView ivhome = findViewById(R.id.iconInicio);
+        ImageView ivPRoducto = findViewById(R.id.iconProducto);
+        //ImageView billi
+        //ImageView pradin
+        Intent intentHome = new Intent(this, Inicio.class);
+        Intent intentProducto = new Intent(this, InstrumentsGalery.class);
+        //intent billy
+        //intent pradin
+        ivhome.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    startActivity(intentHome);
+                    }
+                }
+        );
 
+        ivPRoducto.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(intentProducto);
+                    }
+                }
+        );
+
+        //*****************
 
         filterUser.addTextChangedListener(new TextWatcher() {
             @Override
@@ -98,7 +127,10 @@ public class UserGestorActivity extends AppCompatActivity {
 
     }
 
+    public void productoIconColor(View view) {
+        Button boton = (Button) view;
 
+    }
     private void consultarListasPersonas(){
         SQLiteDatabase dbs = db.getReadableDatabase();
         DataUserBase dataUser = null;

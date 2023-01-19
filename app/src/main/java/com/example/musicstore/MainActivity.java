@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btnregis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(intenRegister);
+                startActivity(intentPrincipal);
             }
         });
 
