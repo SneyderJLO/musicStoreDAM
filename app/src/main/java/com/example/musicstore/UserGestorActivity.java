@@ -50,14 +50,12 @@ public class UserGestorActivity extends AppCompatActivity {
         //*************menu
         ImageView ivhome = findViewById(R.id.iconInicio);
         ImageView ivPRoducto = findViewById(R.id.iconProducto);
-        //ImageView billi
-        //ImageView pradin
+        ImageView ivCarrito = findViewById(R.id.iconCarrito);
         ImageView ivFaq = findViewById(R.id.iconFaq);
 
         Intent intentHome = new Intent(this, Inicio.class);
         Intent intentProducto = new Intent(this, InstrumentsGalery.class);
-        //intent billy
-        //intent pradin
+        Intent intentCarrito = new Intent(this,CarritoActivity.class);
         Intent intentFaq = new Intent(this, FaqActivity.class);
 
         ivhome.setOnClickListener(
@@ -83,6 +81,15 @@ public class UserGestorActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         startActivity(intentFaq);
+                    }
+                }
+        );
+
+        ivCarrito.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(intentCarrito);
                     }
                 }
         );

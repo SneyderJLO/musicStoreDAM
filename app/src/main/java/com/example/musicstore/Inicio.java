@@ -16,12 +16,12 @@ public class Inicio extends AppCompatActivity {
 
         ImageView ivPRoducto = findViewById(R.id.iconProducto);
         ImageView ivUsuario = findViewById(R.id.iconUsuario);
-        //ImageView billi
+        ImageView ivCarrito = findViewById(R.id.iconCarrito);
         ImageView ivFaq = findViewById(R.id.iconFaq);
         Intent intentHome = new Intent(this, Inicio.class);
         Intent intentProducto = new Intent(this, InstrumentsGalery.class);
         Intent intentUsuario = new Intent(this, UserGestorActivity.class);
-        //intent billy
+        Intent intentCarrito = new Intent(this,CarritoActivity.class);
         Intent intentFaq = new Intent(this, FaqActivity.class);
 
         ivPRoducto.setOnClickListener(
@@ -46,6 +46,15 @@ public class Inicio extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         startActivity(intentFaq);
+                    }
+                }
+        );
+
+        ivCarrito.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(intentCarrito);
                     }
                 }
         );
