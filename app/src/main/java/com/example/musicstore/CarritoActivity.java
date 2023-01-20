@@ -2,24 +2,17 @@ package com.example.musicstore;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.example.musicstore.db.Conexion;
-
-public class FaqActivity extends AppCompatActivity {
+public class CarritoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_faq);
+        setContentView(R.layout.activity_carrito);
 
         //*************menu
         ImageView ivhome = findViewById(R.id.iconInicio);
@@ -79,18 +72,5 @@ public class FaqActivity extends AppCompatActivity {
         );
 
         //*****************
-//        btnGuardar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Conexion conexion = new Conexion(FaqActivity.this);
-//                final SQLiteDatabase db = conexion.getWritableDatabase();
-//
-//                ContentValues cv = new ContentValues();
-//                cv.put("descripcion", pregunta.getText().toString().trim());
-//                db.insert("preguntas", null, cv);
-//            }
-//        });
-
-
     }
 }
