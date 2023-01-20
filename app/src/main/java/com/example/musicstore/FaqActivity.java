@@ -2,11 +2,17 @@ package com.example.musicstore;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.musicstore.db.Conexion;
 
 public class FaqActivity extends AppCompatActivity {
 
@@ -15,13 +21,11 @@ public class FaqActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faq);
 
-
         //*************menu
         ImageView ivhome = findViewById(R.id.iconInicio);
         ImageView ivPRoducto = findViewById(R.id.iconProducto);
         ImageView ivUsuario = findViewById(R.id.iconUsuario);
         //ImageView billi
-        //ImageView pradin
         ImageView ivFaq = findViewById(R.id.iconFaq);
         Intent intentHome = new Intent(this, Inicio.class);
         Intent intentProducto = new Intent(this, InstrumentsGalery.class);
@@ -66,6 +70,18 @@ public class FaqActivity extends AppCompatActivity {
         );
 
         //*****************
+//        btnGuardar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Conexion conexion = new Conexion(FaqActivity.this);
+//                final SQLiteDatabase db = conexion.getWritableDatabase();
+//
+//                ContentValues cv = new ContentValues();
+//                cv.put("descripcion", pregunta.getText().toString().trim());
+//                db.insert("preguntas", null, cv);
+//            }
+//        });
+
 
     }
 }
