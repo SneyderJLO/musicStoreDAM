@@ -50,7 +50,7 @@ public class UserGestorActivity extends AppCompatActivity {
         //*************menu
         ImageView ivhome = findViewById(R.id.iconInicio);
         ImageView ivPRoducto = findViewById(R.id.iconProducto);
-        ImageView ivCarrito = findViewById(R.id.iconCarrito);
+
         ImageView ivFaq = findViewById(R.id.iconFaq);
 
         Intent intentHome = new Intent(this, Inicio.class);
@@ -85,14 +85,7 @@ public class UserGestorActivity extends AppCompatActivity {
                 }
         );
 
-        ivCarrito.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        startActivity(intentCarrito);
-                    }
-                }
-        );
+
 
         //*****************
 

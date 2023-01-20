@@ -34,7 +34,6 @@ public class InstrumentsGalery extends AppCompatActivity {
         setContentView(R.layout.activity_instruments_galery);
         ImageView ivhome = findViewById(R.id.iconInicio);
         ImageView ivUsuario = findViewById(R.id.iconUsuario);
-        ImageView ivCarrito = findViewById(R.id.iconCarrito);
         ImageView ivFaq = findViewById(R.id.iconFaq);
 
         Intent intentHome = new Intent(this, Inicio.class);
@@ -69,14 +68,7 @@ public class InstrumentsGalery extends AppCompatActivity {
                 }
         );
 
-        ivCarrito.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        startActivity(intentCarrito);
-                    }
-                }
-        );
+
 
         showInstruments();
 
